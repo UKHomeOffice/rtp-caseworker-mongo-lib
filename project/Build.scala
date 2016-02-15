@@ -13,7 +13,7 @@ object Build extends Build {
     .settings(
       name := moduleName,
       organization := "uk.gov.homeoffice",
-      version := "1.0.0-SNAPSHOT",
+      version := "1.0.0",
       scalaVersion := "2.11.7",
       scalacOptions ++= Seq(
         "-feature",
@@ -68,8 +68,8 @@ object Build extends Build {
       libraryDependencies ++= Seq(
         "uk.gov.homeoffice" %% "rtp-test-lib" % "1.2.0-SNAPSHOT" withSources(),
         "uk.gov.homeoffice" %% "rtp-test-lib" % "1.2.0-SNAPSHOT" % Test classifier "tests" withSources(),
-        "uk.gov.homeoffice" %% "rtp-mongo-lib" % "1.0.0-SNAPSHOT" withSources(),
-        "uk.gov.homeoffice" %% "rtp-mongo-lib" % "1.0.0-SNAPSHOT" % Test classifier "tests" withSources()
+        "uk.gov.homeoffice" %% "rtp-mongo-lib" % "1.0.0" withSources(),
+        "uk.gov.homeoffice" %% "rtp-mongo-lib" % "1.0.0" % Test classifier "tests" withSources()
       )
     )
   }
