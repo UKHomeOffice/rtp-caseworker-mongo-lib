@@ -1,9 +1,9 @@
-package uk.gov.homeoffice.mongo.casbah
+package uk.gov.homeoffice.mongo.salat
 
 import org.specs2.execute.{AsResult, Result}
 import org.specs2.matcher.Scope
 import org.specs2.mutable.Specification
-import uk.gov.homeoffice.mongo.salat.Repository
+import uk.gov.homeoffice.mongo.casbah.{CaseworkerMongo, EmbeddedMongoSpec}
 
 class CaseworkerMongoSpec extends Specification with EmbeddedMongoSpec {
   override def around[T: AsResult](t: => T): Result = try {
@@ -15,7 +15,7 @@ class CaseworkerMongoSpec extends Specification with EmbeddedMongoSpec {
 
   trait Context extends Scope {
     val repository = new Repository[Test] with CaseworkerMongo {
-      val collection = "tests"
+      val collectionName = "tests"
     }
   }
 
