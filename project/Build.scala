@@ -10,6 +10,8 @@ object Build extends Build {
     .configs(IntegrationTest)
     .settings(Revolver.settings)
     .settings(Defaults.itSettings: _*)
+    //.settings(javaOptions += "-Dconfig.resource=application.no.pollers.conf")
+    .settings(run := (run in Runtime).evaluated) // Required to stop Gatling plugin overriding the default "run".
     .settings(
       name := moduleName,
       organization := "uk.gov.homeoffice",
@@ -51,6 +53,4 @@ object Build extends Build {
         "uk.gov.homeoffice" %% "rtp-mongo-lib" % `rtp-mongo-lib-version` % Test classifier "tests" withSources()
       )
     })
-    //.settings(javaOptions += "-Dconfig.resource=application.no.pollers.conf")
-    .settings(run := (run in Runtime).evaluated) // Required to stop Gatling plugin overriding the default "run".
 }
