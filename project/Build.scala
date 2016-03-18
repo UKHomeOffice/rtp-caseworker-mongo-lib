@@ -15,7 +15,7 @@ object Build extends Build {
     .settings(
       name := moduleName,
       organization := "uk.gov.homeoffice",
-      version := "1.5.0",
+      version := "1.5.1",
       scalaVersion := "2.11.8",
       scalacOptions ++= Seq(
         "-feature",
@@ -41,8 +41,8 @@ object Build extends Build {
     )
     .settings(libraryDependencies ++= {
       val `gatling-verson` = "2.1.7"
-      val `rtp-test-lib-version` = "1.2.0"
-      val `rtp-mongo-lib-version` = "1.7.0"
+      val `rtp-test-lib-version` = "1.2.1"
+      val `rtp-mongo-lib-version` = "1.7.1"
 
       Seq(
         "uk.gov.homeoffice" %% "rtp-test-lib" % `rtp-test-lib-version` withSources(),
