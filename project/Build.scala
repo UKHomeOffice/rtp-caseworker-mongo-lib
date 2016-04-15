@@ -41,7 +41,7 @@ object Build extends Build {
     .settings(libraryDependencies ++= {
       val `gatling-verson` = "2.1.7"
       val `rtp-test-lib-version` = "1.2.1"
-      val `rtp-mongo-lib-version` = "1.7.3"
+      val `rtp-mongo-lib-version` = "1.7.4"
 
       Seq(
         "uk.gov.homeoffice" %% "rtp-test-lib" % `rtp-test-lib-version` withSources(),
