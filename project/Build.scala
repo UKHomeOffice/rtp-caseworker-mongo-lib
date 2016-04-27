@@ -2,11 +2,12 @@ import io.gatling.sbt.GatlingPlugin
 import sbt.Keys._
 import sbt._
 import spray.revolver.RevolverPlugin._
+import sbtrelease.ReleasePlugin
 
 object Build extends Build {
   val moduleName = "rtp-caseworker-mongo-lib"
 
-  val root = Project(id = moduleName, base = file(".")).enablePlugins(GatlingPlugin)
+  val root = Project(id = moduleName, base = file(".")).enablePlugins(GatlingPlugin, ReleasePlugin)
     .configs(IntegrationTest)
     .settings(Revolver.settings)
     .settings(Defaults.itSettings: _*)
