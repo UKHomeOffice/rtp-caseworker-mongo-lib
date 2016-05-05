@@ -2,7 +2,7 @@ package uk.gov.homeoffice.mongo.casbah
 
 import org.specs2.mutable.SpecificationLike
 
-trait CaseworkerEmbeddeMongoSpecification extends EmbeddedMongoSpecification {
+trait CaseworkerEmbeddedMongoSpecification extends EmbeddedMongoSpecification {
   this: SpecificationLike =>
 
   lazy val mongoConfiguration: Map[String, String] = Map(
