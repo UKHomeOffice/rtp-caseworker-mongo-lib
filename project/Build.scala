@@ -35,14 +35,15 @@ object Build extends Build {
         "Artifactory Release Realm" at "http://artifactory.registered-traveller.homeoffice.gov.uk/artifactory/libs-release-local/",
         "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
         "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/",
+        "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/",
         "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases",
         "Kamon Repository" at "http://repo.kamon.io"
       )
     )
     .settings(libraryDependencies ++= {
       val `gatling-verson` = "2.2.0"
-      val `rtp-test-lib-version` = "1.3.1"
-      val `rtp-mongo-lib-version` = "1.7.18"
+      val `rtp-test-lib-version` = "1.3.4"
+      val `rtp-mongo-lib-version` = "2.0.1"
 
       Seq(
         "uk.gov.homeoffice" %% "rtp-test-lib" % `rtp-test-lib-version` withSources(),
