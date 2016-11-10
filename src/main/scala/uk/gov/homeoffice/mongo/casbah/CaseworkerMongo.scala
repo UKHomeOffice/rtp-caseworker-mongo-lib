@@ -7,7 +7,7 @@ import uk.gov.homeoffice.configuration.HasConfig
   * Mixin to a repository needing to connect to the "caseworker" Mongo
   */
 trait CaseworkerMongo extends Mongo {
-  lazy val db = CaseworkerMongo.caseworkerdb
+  lazy val mongoDB = CaseworkerMongo.mongoDB
 }
 
 /**
@@ -17,5 +17,5 @@ trait CaseworkerMongo extends Mongo {
   * caseworker.mongodb = "mongodb://user:pass@host:27011,host2:27012,host3:27013/caseworker"
   */
 object CaseworkerMongo extends HasConfig {
-  lazy val caseworkerdb = Mongo db MongoClientURI(config getString "caseworker.mongodb")
+  lazy val mongoDB = Mongo db MongoClientURI(config getString "caseworker.mongodb")
 }
