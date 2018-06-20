@@ -1,4 +1,29 @@
-initialCommands in (Test, console) := """ammonite.repl.Main.run("")"""
+import sbtrelease.ReleasePlugin
+
+val moduleName = "rtp-caseworker-mongo-lib"
+
+val root = Project(id = moduleName, base = file(".")).enablePlugins(ReleasePlugin)
+  .configs(IntegrationTest)
+  .settings(
+    name := moduleName,
+    organization := "uk.gov.homeoffice",
+    scalaVersion := "2.12.6",
+    crossScalaVersions := Seq("2.11.8", "2.12.6")
+  )
+
+credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+
+resolvers ++= Seq(
+  "Artifactory Snapshot Realm" at "http://artifactory.registered-traveller.homeoffice.gov.uk/artifactory/libs-snapshot-local/",
+  "Artifactory Release Realm" at "http://artifactory.registered-traveller.homeoffice.gov.uk/artifactory/libs-release-local/",
+  "Artifactory External Release Local Realm" at "http://artifactory.registered-traveller.homeoffice.gov.uk/artifactory/ext-release-local/"
+)
+
+libraryDependencies ++= Seq(
+  "uk.gov.homeoffice" %% "rtp-test-lib" % "1.4.4-SNAPSHOT",
+  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.0.16-SNAPSHOT",
+  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.0.16-SNAPSHOT" % Test classifier "tests"
+)
 
 publishTo := {
   val artifactory = "http://artifactory.registered-traveller.homeoffice.gov.uk/"
@@ -8,8 +33,6 @@ publishTo := {
   else
     Some("release"  at artifactory + "artifactory/libs-release-local")
 }
-
-credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 
 // Enable publishing the jar produced by `test:package`
 publishArtifact in (Test, packageBin) := true
