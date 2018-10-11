@@ -20,9 +20,9 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "uk.gov.homeoffice" %% "rtp-test-lib" % "1.4.4-SNAPSHOT",
-  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.0.16-SNAPSHOT",
-  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.0.16-SNAPSHOT" % Test classifier "tests"
+  "uk.gov.homeoffice" %% "rtp-test-lib" % "1.4.8",
+  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.0.22",
+  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.0.22" % Test classifier "tests"
 )
 
 publishTo := {
