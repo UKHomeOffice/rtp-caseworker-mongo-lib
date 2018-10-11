@@ -18,4 +18,5 @@ trait CaseworkerMongo extends Mongo {
   */
 object CaseworkerMongo extends HasConfig {
   lazy val mongoDB = Mongo.mongoDB(MongoClientURI(config getString "caseworker.mongodb"))
+
 }

@@ -6,7 +6,7 @@ trait CaseworkerMongoSpecification extends MongoSpecification with CaseworkerMon
   this: SpecificationLike =>
 
   lazy val mongoConfiguration: Map[String, String] = Map(
-    "mongodb.uri" -> s"mongodb://localhost:$port/$database",
-    "caseworker.mongodb" -> s"mongodb://localhost:$port/$database",
+    "mongodb.uri" -> s"mongodb://$server:$port/$database",
+    "caseworker.mongodb" -> s"mongodb://$server:$port/$database",
     "memcachedplugin" -> "disabled")
 }
