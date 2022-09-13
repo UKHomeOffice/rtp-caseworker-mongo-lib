@@ -3,9 +3,9 @@ package uk.gov.homeoffice.mongo.salat
 import org.specs2.execute.{AsResult, Result}
 import org.specs2.matcher.Scope
 import org.specs2.mutable.Specification
-import uk.gov.homeoffice.mongo.casbah.{CaseworkerMongo, EmbeddedMongoSpecification}
+import uk.gov.homeoffice.mongo.casbah.{CaseworkerMongo, MongoSpecification}
 
-class CaseworkerMongoSpec extends Specification with EmbeddedMongoSpecification {
+class CaseworkerMongoSpec extends Specification with MongoSpecification {
   trait Context extends Scope {
     val repository = new Repository[Test] with CaseworkerMongo {
       val collectionName = "tests"
