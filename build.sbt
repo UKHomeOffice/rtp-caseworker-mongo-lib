@@ -7,8 +7,8 @@ val root = Project(id = moduleName, base = file("."))
   .settings(
     name := moduleName,
     organization := "uk.gov.homeoffice",
-    scalaVersion := "2.12.6",
-    crossScalaVersions := Seq("2.11.8", "2.12.6")
+    scalaVersion := "2.12.16",
+    crossScalaVersions := Seq("2.12.16")
   )
 
 credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
@@ -20,10 +20,10 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "ch.qos.logback" % "logback-classic" % "1.4.0",
-  "uk.gov.homeoffice" %% "rtp-test-lib" % "1.6.18-g13a878a",
-  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.1.11-g386f964",
-  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.1.11-g386f964" % Test classifier "tests"
+  "ch.qos.logback" % "logback-classic" % "1.4.14",
+  "uk.gov.homeoffice" %% "rtp-test-lib" % "1.6.22-gacd233d",
+  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.1.13-g78c730c",
+  "uk.gov.homeoffice" %% "rtp-mongo-lib" % "3.1.13-g78c730c" % Test classifier "tests"
 )
 
 publishTo := {
